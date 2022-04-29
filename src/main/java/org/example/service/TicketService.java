@@ -87,6 +87,7 @@ public class TicketService {
     }
 
     //TODO: GET A FUNCTION TO HANDLE DATES
+    //TODO: ASK FOR DATE INPUT
     public static void getTicketsByDate(int employeeId) {
         System.out.println("All Tickets by date:");
         TicketDao ticketDao = DaoFactory.getTicketDao();
