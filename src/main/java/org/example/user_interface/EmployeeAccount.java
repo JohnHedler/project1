@@ -1,6 +1,7 @@
 package org.example.user_interface;
 
 import org.example.entity.Employee;
+import org.example.service.TicketService;
 import org.example.utilities.AppUtilities;
 import org.example.utilities.InputUtilities;
 
@@ -56,18 +57,19 @@ public class EmployeeAccount {
             switch(choice){
                 case 1:
                     //submit new ticket
-
+                    TicketService.insertTicket(employee.getId());
                     break;
                 case 2:
                     //view pending tickets
-
+                    TicketService.getPendingTickets(employee.getId());
                     break;
                 case 3:
                     //view past tickets
+                    TicketService.getPastTickets(employee.getId());
                     break;
                 case 4:
                     //view tickets by date
-
+                    TicketService.getTicketsByDate(employee.getId());
                     break;
                 case 5:
                     //log out

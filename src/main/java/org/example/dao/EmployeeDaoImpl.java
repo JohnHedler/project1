@@ -164,7 +164,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public void updateEmployee(Employee employee) {
         //update query statement
         String sql = "update employees set " +
-                "employee_type = ?, employee_first_name = ?, employee_last_name = ?, employee_user_name = ?, employee_password = ? " +
+                "employee_type = ?, employee_first_name = ?, employee_last_name = ?, employee_username = ?, employee_password = ? " +
                 "where employee_id = ?;";
 
         try {
