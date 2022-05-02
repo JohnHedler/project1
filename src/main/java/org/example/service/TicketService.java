@@ -88,6 +88,8 @@ public class TicketService {
 
     //TODO: GET A FUNCTION TO HANDLE DATES
     //TODO: ASK FOR DATE INPUT
+    //TODO: SORT BY DATE, BUT COULD ADD BETWEEN DATES
+    //TODO: I HAVE THIS. CHECK DBEAVER BANK SCRIPTS
     public static void getTicketsByDate(int employeeId) {
         System.out.println("All Tickets by date:");
         TicketDao ticketDao = DaoFactory.getTicketDao();
