@@ -49,6 +49,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
                 resultSet.next();
                 // extract the id from the result set
                 int id = resultSet.getInt(1);
+                employee.setId(id);
                 System.out.println("Generated ID is: " + id);
             }
             else {
@@ -161,7 +162,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public void updateEmployee(Employee employee) {
+    public boolean updateEmployee(Employee employee) {
         //update query statement
         String sql = "update employees set " +
                 "employee_type = ?, employee_first_name = ?, employee_last_name = ?, employee_username = ?, employee_password = ? " +
@@ -179,15 +180,23 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
             //execute update and see if any rows were affected
             int count = preparedStatement.executeUpdate();
-            if(count == 1) System.out.println("Update successful!");
-            else System.out.println("Something went wrong with the update!");
+            if(count == 1) {
+                System.out.println("Update successful!");
+                return true;
+            }
+            else {
+                System.out.println("Something went wrong with the update!");
+                return false;
+            }
         } catch(SQLException e) {
             e.printStackTrace();
         }
+
+        return false;
     }
 
     @Override
-    public void deleteEmployee(int id) {
+    public boolean deleteEmployee(int id) {
         //delete query statement
         String sql = "delete from employees where employee_id = ?;";
         try {
@@ -199,13 +208,17 @@ public class EmployeeDaoImpl implements EmployeeDao {
             int count = preparedStatement.executeUpdate();
             if(count == 1) {
                 System.out.println("Deletion was successful!");
+                return true;
             }
             else {
                 System.out.println("Something went wrong with the deletion!");
+                return false;
             }
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
+
+        return false;
     }
 }

@@ -4,6 +4,7 @@ import org.example.entity.Ticket;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
 
 public class TicketDaoImpl implements TicketDao{
 
@@ -43,6 +44,7 @@ public class TicketDaoImpl implements TicketDao{
                 resultSet.next();
                 // extract the id from the result set
                 int id = resultSet.getInt(1);
+                ticket.setId(id);
                 System.out.println("Generated ID is: " + id);
             }
             else {
@@ -206,19 +208,20 @@ public class TicketDaoImpl implements TicketDao{
     }
 
     @Override
-    public List<Ticket> getTicketsByDate(int employeeId) {
+    public List<Ticket> getTicketsByDate(int employeeId, Timestamp startDate, Timestamp endDate) {
         // create a list of tickets to store our results:
         List<Ticket> tickets = new ArrayList<>();
 
         //query statement
-        String sql = "select * from tickets where ticket_employee_id = ?;";
-        //String sql = "select * from tickets where ticket_employee_id = ? and ticket_date = ?;";
+        String sql = "select * from tickets where ticket_employee_id = ? and " +
+                "ticket_date::date > ?::date and ticket_date::date < ?::date;";
 
         try {
             //prepare statement using query statement and submit through connection
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, employeeId);
-            //preparedStatement.setTimestamp(2,date);
+            preparedStatement.setTimestamp(2, startDate);
+            preparedStatement.setTimestamp(3, endDate);
 
             //execute prepared statement to get all employees
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -255,7 +258,7 @@ public class TicketDaoImpl implements TicketDao{
     }
 
     @Override
-    public void updateTicket(Ticket ticket) {
+    public boolean updateTicket(Ticket ticket) {
         //update query statement
         String sql = "update tickets set ticket_employee_id = ?, ticket_amount = ?, ticket_description = ?, " +
                 "ticket_status = ? where ticket_id = ?;";
@@ -271,15 +274,23 @@ public class TicketDaoImpl implements TicketDao{
 
             //execute update and see if any rows were affected
             int count = preparedStatement.executeUpdate();
-            if(count == 1) System.out.println("Update successful!");
-            else System.out.println("Something went wrong with the update!");
+            if(count == 1) {
+                System.out.println("Update successful!");
+                return true;
+            }
+            else {
+                System.out.println("Something went wrong with the update!");
+                return false;
+            }
         } catch(SQLException e) {
             e.printStackTrace();
         }
+
+        return false;
     }
 
     @Override
-    public void deleteTicket(int id) {
+    public boolean deleteTicket(int id) {
         //delete query statement
         String sql = "delete from tickets where ticket_id = ?;";
         try {
@@ -291,13 +302,17 @@ public class TicketDaoImpl implements TicketDao{
             int count = preparedStatement.executeUpdate();
             if(count == 1) {
                 System.out.println("Deletion was successful!");
+                return true;
             }
             else {
                 System.out.println("Something went wrong with the deletion!");
+                return false;
             }
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
+
+        return false;
     }
 }
