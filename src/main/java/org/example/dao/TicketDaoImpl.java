@@ -1,10 +1,8 @@
 package org.example.dao;
 
+import org.example.data_structure.CustomArrayList;
 import org.example.entity.Ticket;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Date;
 
 public class TicketDaoImpl implements TicketDao{
 
@@ -81,9 +79,9 @@ public class TicketDaoImpl implements TicketDao{
     }
 
     @Override
-    public List<Ticket> getAllTicketsByEmployeeId(int employeeId) {
+    public CustomArrayList<Ticket> getAllTicketsByEmployeeId(int employeeId) {
         //create custom array list
-        List<Ticket> tickets = new ArrayList<>();
+        CustomArrayList<Ticket> tickets = new CustomArrayList<>();
 
         //query statement
         String sql = "select * from tickets where ticket_employee_id = ?";
@@ -119,9 +117,9 @@ public class TicketDaoImpl implements TicketDao{
     }
 
     @Override
-    public List<Ticket> getAllTickets() {
+    public CustomArrayList<Ticket> getAllTickets() {
         // create a list of tickets to store our results:
-        List<Ticket> tickets = new ArrayList<>();
+        CustomArrayList<Ticket> tickets = new CustomArrayList<>();
 
         //query statement
         String sql = "select * from tickets;";
@@ -148,9 +146,9 @@ public class TicketDaoImpl implements TicketDao{
     }
 
     @Override
-    public List<Ticket> getPendingTickets(int employeeId) {
+    public CustomArrayList<Ticket> getPendingTickets(int employeeId) {
         // create a list of tickets to store our results:
-        List<Ticket> tickets = new ArrayList<>();
+        CustomArrayList<Ticket> tickets = new CustomArrayList<>();
 
         //query statement
         String sql = "select * from tickets where ticket_employee_id = ? and ticket_status = 'pending';";
@@ -178,9 +176,9 @@ public class TicketDaoImpl implements TicketDao{
     }
 
     @Override
-    public List<Ticket> getPastTickets(int employeeId) {
+    public CustomArrayList<Ticket> getPastTickets(int employeeId) {
         // create a list of tickets to store our results:
-        List<Ticket> tickets = new ArrayList<>();
+        CustomArrayList<Ticket> tickets = new CustomArrayList<>();
 
         //query statement
         String sql = "select * from tickets where ticket_employee_id = ? and ticket_status in ('approved', 'denied');";
@@ -208,13 +206,13 @@ public class TicketDaoImpl implements TicketDao{
     }
 
     @Override
-    public List<Ticket> getTicketsByDate(int employeeId, Timestamp startDate, Timestamp endDate) {
+    public CustomArrayList<Ticket> getTicketsByDate(int employeeId, Timestamp startDate, Timestamp endDate) {
         // create a list of tickets to store our results:
-        List<Ticket> tickets = new ArrayList<>();
+        CustomArrayList<Ticket> tickets = new CustomArrayList<>();
 
         //query statement
         String sql = "select * from tickets where ticket_employee_id = ? and " +
-                "ticket_date::date > ?::date and ticket_date::date < ?::date;";
+                "ticket_date::date between ?::date and ?::date;";
 
         try {
             //prepare statement using query statement and submit through connection

@@ -18,18 +18,27 @@ public class ConnectionFactory {
 
         // this method will return a connection the SQL
         public static Connection getConnection() {
+            //with the boolean, we can turn testing on or off
+            boolean test = true;
+//            boolean test = false;
+
+            //determine the driver and config files
+            String driver = test ? "org.h2.Driver" : "org.postgresql.Driver";
+            String configFile = test ? "dbConfigTest" : "dbConfig";
+
+            //check if connection is null
             if(connection == null) {
                 // if we don't have a connection yet, we can create one:
 
                 //FIRST: specify the postgres driver
                 try {
-                    Class.forName("org.postgresql.Driver");
+                    Class.forName(driver);
                 } catch(ClassNotFoundException e) {
                     e.printStackTrace();
                 }
 
-                // access these values from a different file (dbConfig.properties)
-                ResourceBundle bundle = ResourceBundle.getBundle("dbConfig");
+                // access these values from a different file through the configFile value selected above.
+                ResourceBundle bundle = ResourceBundle.getBundle(configFile);
                 String url = bundle.getString("url");
                 String username = bundle.getString("username");
                 String password = bundle.getString("password");
