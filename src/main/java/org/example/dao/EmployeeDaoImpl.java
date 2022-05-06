@@ -1,5 +1,6 @@
 package org.example.dao;
 
+import org.example.data_structure.CustomArrayList;
 import org.example.entity.Employee;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -115,9 +116,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public List<Employee> getAllEmployees() {
+    public CustomArrayList<Employee> getAllEmployees() {
         // create a list of employees to store our results:
-        List<Employee> employees = new ArrayList<>();
+        CustomArrayList<Employee> employees = new CustomArrayList<>();
 
         //query statement
         String sql = "select * from employees;";
