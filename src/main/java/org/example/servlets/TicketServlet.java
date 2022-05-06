@@ -1,6 +1,8 @@
 package org.example.servlets;
 
+import org.example.data_structure.CustomArrayList;
 import org.example.entity.Ticket;
+import org.example.service.TicketService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 
 public class TicketServlet extends HttpServlet {
@@ -26,7 +27,7 @@ public class TicketServlet extends HttpServlet {
             idToGet = Integer.parseInt(req.getParameter("ticket_employee_id"));
         } catch (NumberFormatException e) {
             // if we didn't pass in an id, we want all books:
-            List<Ticket> tickets = TicketService.getAllTickets();
+            CustomArrayList<Ticket> tickets = TicketService.getAllTickets();
             out.print(tickets);
             return;
         }
