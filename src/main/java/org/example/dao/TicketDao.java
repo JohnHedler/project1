@@ -2,6 +2,7 @@ package org.example.dao;
 
 import org.example.data_structure.CustomArrayList;
 import org.example.entity.Ticket;
+
 import java.sql.Timestamp;
 
 //this interface contains all the methods used to access the database erdb -> tickets table
