@@ -4,13 +4,12 @@ import org.example.dao.DaoFactory;
 import org.example.dao.EmployeeDao;
 import org.example.dao.TestDao;
 import org.example.dao.TicketDao;
+import org.example.data_structure.CustomArrayList;
 import org.example.entity.Employee;
 import org.example.entity.Ticket;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.sql.Timestamp;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -61,7 +60,7 @@ public class AppTest {
     @Test
     public void testGetAllEmployees() {
         EmployeeDao employeeDao = DaoFactory.getEmployeeDao();
-        List<Employee> employees = employeeDao.getAllEmployees();
+        CustomArrayList<Employee> employees = employeeDao.getAllEmployees();
 
         assertFalse(employees.isEmpty());
     }
@@ -118,7 +117,7 @@ public class AppTest {
     @Test
     public void testGetAllTicketsByEmployeeId() {
         TicketDao ticketDao = DaoFactory.getTicketDao();
-        List<Ticket> tickets = ticketDao.getAllTicketsByEmployeeId(20);
+        CustomArrayList<Ticket> tickets = ticketDao.getAllTicketsByEmployeeId(20);
 
         assertTrue(tickets.isEmpty());
     }
@@ -127,7 +126,7 @@ public class AppTest {
     @Test
     public void testGetAllTickets() {
         TicketDao ticketDao = DaoFactory.getTicketDao();
-        List<Ticket> tickets = ticketDao.getAllTickets();
+        CustomArrayList<Ticket> tickets = ticketDao.getAllTickets();
 
         assertFalse(tickets.isEmpty());
     }
@@ -136,7 +135,7 @@ public class AppTest {
     @Test
     public void testGetPendingTickets() {
         TicketDao ticketDao = DaoFactory.getTicketDao();
-        List<Ticket> tickets = ticketDao.getPendingTickets(1);
+        CustomArrayList<Ticket> tickets = ticketDao.getPendingTickets(1);
 
         assertEquals("motel room", tickets.get(2).getDescription());
     }
@@ -145,7 +144,7 @@ public class AppTest {
     @Test
     public void testGetPastTickets() {
         TicketDao ticketDao = DaoFactory.getTicketDao();
-        List<Ticket> tickets = ticketDao.getPastTickets(1);
+        CustomArrayList<Ticket> tickets = ticketDao.getPastTickets(1);
 
         assertEquals("approved", tickets.get(0).getStatus());
         assertEquals("denied", tickets.get(1).getStatus());
@@ -155,7 +154,7 @@ public class AppTest {
     @Test
     public void testGetTicketsByDate() {
         TicketDao ticketDao = DaoFactory.getTicketDao();
-        List<Ticket> tickets = ticketDao.getTicketsByDate(3, Timestamp.valueOf("2022-05-01 00:00:00"), Timestamp.valueOf("2022-05-05 00:00:00"));
+        CustomArrayList<Ticket> tickets = ticketDao.getTicketsByDate(3, Timestamp.valueOf("2022-05-01 00:00:00"), Timestamp.valueOf("2022-05-05 00:00:00"));
         if (!tickets.isEmpty()) {
             System.out.println(tickets.get(0).getDate());
         } else {
