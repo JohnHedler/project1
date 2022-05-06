@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c71778ed-5b9f-40fa-b9b2-d562cc3c33c6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/TicketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/TicketServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demos/week-4/servlet-example" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RunManager" selected="JUnit.AppTest">
@@ -141,8 +141,8 @@
       <item itemvalue="JUnit.AppTest.testDeleteTicket" />
       <item itemvalue="JUnit.AppTest.testGetTicketsByDate" />
       <item itemvalue="JUnit.AppTest.testUpdateTicket" />
-      <item itemvalue="Smart Tomcat.Project1" />
       <item itemvalue="JUnit.AppTest.testGetEmployeeById" />
+      <item itemvalue="Smart Tomcat.Project1" />
     </list>
     <recent_temporary>
       <list>
@@ -177,10 +177,10 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/project1$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1651715027254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/project1$AppTest_testGetEmployeeById.ic" NAME="AppTest.testGetEmployeeById Coverage Results" MODIFIED="1651714781548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/project1$AppTest_testGetEmployeeById.ic" NAME="AppTest.testGetEmployeeById Coverage Results" MODIFIED="1651714781548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/project1$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1651715027254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/project1$AppTest_testGetEmployee.ic" NAME="AppTest.testGetEmployee Coverage Results" MODIFIED="1651700060508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
