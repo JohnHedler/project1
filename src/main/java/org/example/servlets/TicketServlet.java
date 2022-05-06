@@ -1,5 +1,6 @@
 package org.example.servlets;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.data_structure.CustomArrayList;
 import org.example.entity.Ticket;
 import org.example.service.TicketService;
@@ -37,6 +38,50 @@ public class TicketServlet extends HttpServlet {
         out.print(ticket);
 
     }
+
+    @Override
+    public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        // mapping the json request to a Java object.
+        ObjectMapper mapper = new ObjectMapper();
+        Ticket ticket = mapper.readValue(req.getReader(), Ticket.class);
+        // call the service and return the ticket:
+        Ticket result = TicketService.insertTicket(ticket);
+        PrintWriter out = res.getWriter();
+        out.write(result.toString());
+    }
+
+    @Override
+    public void doPut(HttpServletRequest req, HttpServletResponse res) throws IOException {
+
+        ObjectMapper mapper = new ObjectMapper();
+        Ticket ticket = mapper.readValue(req.getReader(), Ticket.class);
+
+        Ticket result = TicketService.updateTicket(ticket);
+        PrintWriter out = res.getWriter();
+        out.write(result.toString());
+    }
+
+
+    @Override
+    public void doDelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        PrintWriter out = res.getWriter();
+
+        // get the id from the request parameter:
+        int idToDelete = Integer.parseInt(req.getParameter("ticket_employee_id"));
+        // call the service:
+        boolean success = TicketService.deleteTicket(idToDelete);
+        // check if deletion was successful and send the appropriate response:
+        if(success) {
+            out.write("Deleted successfully!");
+        }
+        else {
+            out.write("Deletion failed!");
+        }
+
+
+    }
+
+
 
     
 }
