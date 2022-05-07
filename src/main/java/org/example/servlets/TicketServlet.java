@@ -321,10 +321,10 @@ public class TicketServlet extends HttpServlet {
             boolean inserted = TicketService.insertTicket(ticket);
             if (inserted) {
                 resp.setStatus(201);
-                out.print("Record inserted!");
+                out.print("Ticket record inserted!");
             } else {
                 resp.setStatus(500);
-                out.print("Error: Could not insert record!");
+                out.print("Error: Could not insert ticket record!");
             }
         }else {
             resp.setStatus(403);
@@ -347,7 +347,7 @@ public class TicketServlet extends HttpServlet {
         if(AuthenticatedEmployee.authenticatedEmployee.getEmployee_type().equals("employee")) {
             //by default, return an error
             resp.setStatus(401);
-            out.print("401: Unauthorized\n\nYou are not allowed.");
+            out.print("403: Forbidden\n\nYou are not allowed to perform this action.");
             return;
         }
         else if(AuthenticatedEmployee.authenticatedEmployee.getEmployee_type().equals("manager")){
@@ -384,9 +384,10 @@ public class TicketServlet extends HttpServlet {
 
         //check employee type
         if(AuthenticatedEmployee.authenticatedEmployee.getEmployee_type().equals("employee")) {
-            //by default, return an error
+            //employee cannot do this action
             resp.setStatus(401);
-            out.print("401: Unauthorized\n\nYou are not allowed.");
+            out.print("403: Forbidden\n\nYou are not allowed to perform this action.");
+            return;
         }
         else if(AuthenticatedEmployee.authenticatedEmployee.getEmployee_type().equals("manager")){
             // get the id from the request parameter:

@@ -7,10 +7,9 @@ import org.example.entity.Employee;
 
 public class EmployeeService {
 
-    public static Employee insertEmployee(Employee employee) {
+    public static boolean insertEmployee(Employee employee) {
         EmployeeDao employeeDao = DaoFactory.getEmployeeDao();
-        employeeDao.insertEmployee(employee);
-        return employee;
+        return employeeDao.insertEmployee(employee);
     }
 
     public static Employee getEmployeeById(int id) {

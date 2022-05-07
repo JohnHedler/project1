@@ -71,6 +71,9 @@ public class CustomArrayList<T> implements CustomList<T> {
         return size;
     }
 
+    //getCapacity method: returns the current capacity before resizing
+    public int getCapacity() { return elements.length; }
+
     //overloaded add method: adds element at a particular index
     @Override
     public void add(int index, T element) {

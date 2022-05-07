@@ -47,10 +47,6 @@ public class TicketDaoImpl implements TicketDao{
                 System.out.println("Generated ID is: " + id);
                 return true;
             }
-            else {
-                System.out.println("Something went wrong when adding the ticket!");
-                return false;
-            }
         }catch(SQLException e) {
             e.printStackTrace();
         }
@@ -59,6 +55,7 @@ public class TicketDaoImpl implements TicketDao{
 
     @Override
     public Ticket getTicketById(int id) {
+        Ticket ticket = null;
         String sql = "select * from tickets where ticket_id = ?;";
         try {
             //prepare statement using the connection
@@ -73,13 +70,14 @@ public class TicketDaoImpl implements TicketDao{
             //check to see if the result set returned any records
             if (resultSet.next()) {
                 // extract out the data
-                Ticket ticket = getTicket(resultSet);
-                return ticket;
+                ticket = getTicket(resultSet);
+            }else {
+                throw new SQLException("Record for ID " + id + " does not exist!");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return ticket;
     }
 
     @Override
@@ -108,16 +106,12 @@ public class TicketDaoImpl implements TicketDao{
                 // add employee to the list of employees
                 tickets.add(ticket);
             }
-
-            //return custom array list of tickets
-            return tickets;
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        //return null if nothing was found
-        return null;
+        //return custom array list of tickets
+        return tickets;
     }
 
     @Override
@@ -282,7 +276,6 @@ public class TicketDaoImpl implements TicketDao{
             }
             else {
                 System.out.println("Something went wrong with the update!");
-                return false;
             }
         } catch(SQLException e) {
             e.printStackTrace();
@@ -308,7 +301,6 @@ public class TicketDaoImpl implements TicketDao{
             }
             else {
                 System.out.println("Something went wrong with the deletion!");
-                return false;
             }
         }
         catch (SQLException e) {
@@ -341,15 +333,12 @@ public class TicketDaoImpl implements TicketDao{
                 // add employee to the list of employees
                 tickets.add(ticket);
             }
-
-            //return custom array list of tickets
-            return tickets;
-
         }catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return null;
+        //return custom array list of tickets
+        return tickets;
     }
 
     @Override
@@ -375,14 +364,11 @@ public class TicketDaoImpl implements TicketDao{
                 // add employee to the list of employees
                 tickets.add(ticket);
             }
-
-            //return custom array list of tickets
-            return tickets;
-
         }catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return null;
+        //return the tickets
+        return tickets;
     }
 }

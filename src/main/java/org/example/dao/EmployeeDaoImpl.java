@@ -19,7 +19,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 
     @Override
-    public void insertEmployee(Employee employee) {
+    public boolean insertEmployee(Employee employee) {
         // sql data manipulation language statement
         String sql = "insert into employees (employee_id, employee_type, employee_first_name, employee_last_name, " +
                 "employee_username, employee_password) values (default, ?, ?, ?, ?, ?);";
@@ -51,15 +51,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
                 int id = resultSet.getInt(1);
                 employee.setEmployee_id(id);
                 System.out.println("Generated ID is: " + id);
+                return true;
             }
-            else {
-                System.out.println("Something went wrong when adding the employees!");
-            }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        return false;
     }
 
     @Override
@@ -80,6 +78,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
                 // extract out the data
                 Employee employee = getEmployee(resultSet);
                 return employee;
+            }else {
+                throw new SQLException("Record for ID " + id + " does not exist!");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -89,6 +89,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     @Override
     public Employee getEmployeeByUserName(String userName) {
+        Employee employee = null;
         String sql = "select * from employees where employee_username = ?;";
 
         try {
@@ -104,14 +105,14 @@ public class EmployeeDaoImpl implements EmployeeDao {
             //check to see if the result set returned any records
             if(resultSet.next()) {
                 //extract out the data
-                Employee employee = getEmployee(resultSet);
-                return employee;
+                employee = getEmployee(resultSet);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         //return null if nothing is found
-        return null;
+        return employee;
     }
 
     @Override

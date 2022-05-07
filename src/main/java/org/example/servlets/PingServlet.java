@@ -11,7 +11,7 @@ public class PingServlet extends HttpServlet {
     This will take a simple GET request and respond with "Pong!" and status 202, indicating the request was accepted.
      */
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setStatus(202);
         resp.getWriter().print("Project1> Pong!");
     }
