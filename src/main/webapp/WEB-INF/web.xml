@@ -53,4 +53,16 @@
         <servlet-name>pingServlet</servlet-name>
         <url-pattern>/ping</url-pattern>
     </servlet-mapping>
+
+    <!--
+        Login Servlet
+    -->
+    <servlet>
+        <servlet-name>accountServlet</servlet-name>
+        <servlet-class>org.example.servlets.AccountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>accountServlet</servlet-name>
+        <url-pattern>/accounts</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -15,7 +15,7 @@ public class TicketDaoImpl implements TicketDao{
     }
 
     @Override
-    public void insertTicket(Ticket ticket) {
+    public boolean insertTicket(Ticket ticket) {
         String sql = "insert into tickets(ticket_id, ticket_employee_id, ticket_amount, ticket_description, " +
                 "ticket_date, ticket_status) values (default, ?, ?, ?, current_timestamp, ?);";
 
@@ -25,10 +25,10 @@ public class TicketDaoImpl implements TicketDao{
             PreparedStatement preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
             // fill in the placeholder values from our Employee object
-            preparedStatement.setInt(1, ticket.getEmployeeId());
-            preparedStatement.setDouble(2, ticket.getAmount());
-            preparedStatement.setString(3, ticket.getDescription());
-            preparedStatement.setString(4, ticket.getStatus());
+            preparedStatement.setInt(1, ticket.getTicket_employee_id());
+            preparedStatement.setDouble(2, ticket.getTicket_amount());
+            preparedStatement.setString(3, ticket.getTicket_description());
+            preparedStatement.setString(4, ticket.getTicket_status());
 
             //execute the statement to insert a new employee
             //variable determining how many rows were affected
@@ -43,15 +43,18 @@ public class TicketDaoImpl implements TicketDao{
                 resultSet.next();
                 // extract the id from the result set
                 int id = resultSet.getInt(1);
-                ticket.setId(id);
+                ticket.setTicket_id(id);
                 System.out.println("Generated ID is: " + id);
+                return true;
             }
             else {
                 System.out.println("Something went wrong when adding the ticket!");
+                return false;
             }
         }catch(SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     @Override
@@ -85,7 +88,7 @@ public class TicketDaoImpl implements TicketDao{
         CustomArrayList<Ticket> tickets = new CustomArrayList<>();
 
         //query statement
-        String sql = "select * from tickets where ticket_employee_id = ?";
+        String sql = "select * from tickets where ticket_employee_id = ? order by ticket_date";
 
         try {
             //prepare statement using query statement and submit through connection
@@ -123,7 +126,7 @@ public class TicketDaoImpl implements TicketDao{
         CustomArrayList<Ticket> tickets = new CustomArrayList<>();
 
         //query statement
-        String sql = "select * from tickets;";
+        String sql = "select * from tickets order by ticket_date;";
 
         try {
             //prepare statement using query statement and submit through connection
@@ -152,7 +155,7 @@ public class TicketDaoImpl implements TicketDao{
         CustomArrayList<Ticket> tickets = new CustomArrayList<>();
 
         //query statement
-        String sql = "select * from tickets where ticket_employee_id = ? and ticket_status = 'pending';";
+        String sql = "select * from tickets where ticket_employee_id = ? and ticket_status = 'pending' order by ticket_date;";
 
         try {
             //prepare statement using query statement and submit through connection
@@ -182,7 +185,7 @@ public class TicketDaoImpl implements TicketDao{
         CustomArrayList<Ticket> tickets = new CustomArrayList<>();
 
         //query statement
-        String sql = "select * from tickets where ticket_employee_id = ? and ticket_status in ('approved', 'denied');";
+        String sql = "select * from tickets where ticket_employee_id = ? and ticket_status in ('approved', 'denied') order by ticket_date;";
 
         try {
             //prepare statement using query statement and submit through connection
@@ -213,7 +216,7 @@ public class TicketDaoImpl implements TicketDao{
 
         //query statement
         String sql = "select * from tickets where ticket_employee_id = ? and " +
-                "ticket_date::date between ?::date and ?::date;";
+                "ticket_date::date between ?::date and ?::date order by ticket_date;";
 
         try {
             //prepare statement using query statement and submit through connection
@@ -241,15 +244,15 @@ public class TicketDaoImpl implements TicketDao{
 
     public Ticket getTicket(ResultSet resultSet) {
         try {
-            int id = resultSet.getInt("ticket_id");
-            int employeeId = resultSet.getInt("ticket_employee_id");
-            double amount = resultSet.getDouble("ticket_amount");
-            String description = resultSet.getString("ticket_description");
-            Timestamp date = resultSet.getTimestamp("ticket_date");
-            String status = resultSet.getString("ticket_status");
+            int ticket_id = resultSet.getInt("ticket_id");
+            int ticket_employee_id = resultSet.getInt("ticket_employee_id");
+            double ticket_amount = resultSet.getDouble("ticket_amount");
+            String ticket_description = resultSet.getString("ticket_description");
+            Timestamp ticket_date = resultSet.getTimestamp("ticket_date");
+            String ticket_status = resultSet.getString("ticket_status");
 
             //create new ticket object
-            return new Ticket(id, employeeId, amount, description, date, status);
+            return new Ticket(ticket_id, ticket_employee_id, ticket_amount, ticket_description, ticket_date, ticket_status);
         } catch(SQLException e) {
             e.printStackTrace();
         }
@@ -265,11 +268,11 @@ public class TicketDaoImpl implements TicketDao{
         try {
             //prepare query statement with updated values
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, ticket.getEmployeeId());
-            preparedStatement.setDouble(2, ticket.getAmount());
-            preparedStatement.setString(3, ticket.getDescription());
-            preparedStatement.setString(4, ticket.getStatus());
-            preparedStatement.setInt(5, ticket.getId());
+            preparedStatement.setInt(1, ticket.getTicket_employee_id());
+            preparedStatement.setDouble(2, ticket.getTicket_amount());
+            preparedStatement.setString(3, ticket.getTicket_description());
+            preparedStatement.setString(4, ticket.getTicket_status());
+            preparedStatement.setInt(5, ticket.getTicket_id());
 
             //execute update and see if any rows were affected
             int count = preparedStatement.executeUpdate();
@@ -313,5 +316,73 @@ public class TicketDaoImpl implements TicketDao{
         }
 
         return false;
+    }
+
+    @Override
+    public CustomArrayList<Ticket> getAllPendingTickets() {
+        //create custom array list
+        CustomArrayList<Ticket> tickets = new CustomArrayList<>();
+
+        //set sql string
+        String sql = "select * from tickets where ticket_status = 'pending' order by ticket_date;";
+
+        try{
+            //prepare statement
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            //execute prepared statement to get all employees
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            //loop through the result set
+            while(resultSet.next()) {
+                //get employee from the result set
+                Ticket ticket = getTicket(resultSet);
+
+                // add employee to the list of employees
+                tickets.add(ticket);
+            }
+
+            //return custom array list of tickets
+            return tickets;
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    @Override
+    public CustomArrayList<Ticket> getAllPastTickets() {
+        //create custom array list
+        CustomArrayList<Ticket> tickets = new CustomArrayList<>();
+
+        //set sql string
+        String sql = "select * from tickets where ticket_status in ('approved', 'denied') order by ticket_date;";
+
+        try{
+            //prepare statement
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            //execute prepared statement to get all employees
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            //loop through the result set
+            while(resultSet.next()) {
+                //get employee from the result set
+                Ticket ticket = getTicket(resultSet);
+
+                // add employee to the list of employees
+                tickets.add(ticket);
+            }
+
+            //return custom array list of tickets
+            return tickets;
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

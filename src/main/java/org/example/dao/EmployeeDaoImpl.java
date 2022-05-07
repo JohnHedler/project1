@@ -30,11 +30,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
             PreparedStatement preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
             // fill in the placeholder values from our Employee object
-            preparedStatement.setString(1, employee.getEmployeeType());
-            preparedStatement.setString(2, employee.getFirstName());
-            preparedStatement.setString(3, employee.getLastName());
-            preparedStatement.setString(4, employee.getUserName());
-            preparedStatement.setString(5, employee.getPassword());
+            preparedStatement.setString(1, employee.getEmployee_type());
+            preparedStatement.setString(2, employee.getEmployee_first_name());
+            preparedStatement.setString(3, employee.getEmployee_last_name());
+            preparedStatement.setString(4, employee.getEmployee_username());
+            preparedStatement.setString(5, employee.getEmployee_password());
 
             //execute the statement to insert a new employee
             //variable determining how many rows were affected
@@ -49,7 +49,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
                 resultSet.next();
                 // extract the id from the result set
                 int id = resultSet.getInt(1);
-                employee.setId(id);
+                employee.setEmployee_id(id);
                 System.out.println("Generated ID is: " + id);
             }
             else {
@@ -146,15 +146,16 @@ public class EmployeeDaoImpl implements EmployeeDao {
     // get employee from a result set:
     public Employee getEmployee(ResultSet resultSet) {
         try {
-            int id = resultSet.getInt("employee_id");
-            String employeeType = resultSet.getString("employee_type");
-            String userName = resultSet.getString("employee_username");
-            String password = resultSet.getString("employee_password");
-            String firstName = resultSet.getString("employee_first_name");
-            String lastName = resultSet.getString("employee_last_name");
+            int employee_id = resultSet.getInt("employee_id");
+            String employee_type = resultSet.getString("employee_type");
+            String employee_first_name = resultSet.getString("employee_first_name");
+            String employee_last_name = resultSet.getString("employee_last_name");
+            String employee_username = resultSet.getString("employee_username");
+            String employee_password = resultSet.getString("employee_password");
+
 
             //create new employee object
-            return new Employee(id, employeeType, firstName, lastName, userName, password);
+            return new Employee(employee_id, employee_type, employee_first_name, employee_last_name, employee_username, employee_password);
         } catch(SQLException e) {
             e.printStackTrace();
         }
@@ -171,12 +172,12 @@ public class EmployeeDaoImpl implements EmployeeDao {
         try {
             //prepare query statement with updated values
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, employee.getEmployeeType());
-            preparedStatement.setString(2, employee.getFirstName());
-            preparedStatement.setString(3, employee.getLastName());
-            preparedStatement.setString(4, employee.getUserName());
-            preparedStatement.setString(5, employee.getPassword());
-            preparedStatement.setInt(6, employee.getId());
+            preparedStatement.setString(1, employee.getEmployee_type());
+            preparedStatement.setString(2, employee.getEmployee_first_name());
+            preparedStatement.setString(3, employee.getEmployee_last_name());
+            preparedStatement.setString(4, employee.getEmployee_username());
+            preparedStatement.setString(5, employee.getEmployee_password());
+            preparedStatement.setInt(6, employee.getEmployee_id());
 
             //execute update and see if any rows were affected
             int count = preparedStatement.executeUpdate();
