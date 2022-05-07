@@ -2,83 +2,85 @@ package org.example.entity;
 
 public class Employee {
     //region employee variables
-    private int id;
-    private String employeeType;
-    private String firstName;
-    private String lastName;
-    private String userName;
-    private String password;
+    private int employee_id;
+    private String employee_type;
+    private String employee_first_name;
+    private String employee_last_name;
+    private String employee_username;
+    private String employee_password;
 
     //endregion
 
     //region constructor
+    public Employee() {super();};
+
     public Employee(int id, String employeeType, String firstName, String lastName, String userName, String password) {
-        this.id = id;
-        this.employeeType = employeeType;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userName = userName;
-        this.password = password;
+        this.employee_id = id;
+        this.employee_type = employeeType;
+        this.employee_first_name = firstName;
+        this.employee_last_name = lastName;
+        this.employee_username = userName;
+        this.employee_password = password;
 
     }
 
     public Employee(String employeeType, String firstName, String lastName, String userName, String password) {
-        this.employeeType = employeeType;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userName = userName;
-        this.password = password;
+        this.employee_type = employeeType;
+        this.employee_first_name = firstName;
+        this.employee_last_name = lastName;
+        this.employee_username = userName;
+        this.employee_password = password;
     }
     //endregion
 
     //region employee properties
 
-    public int getId() {
-        return id;
+    public int getEmployee_id() {
+        return employee_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmployee_id(int employee_id) {
+        this.employee_id = employee_id;
     }
 
-    public String getEmployeeType() {
-        return employeeType;
+    public String getEmployee_type() {
+        return employee_type;
     }
 
-    public void setEmployeeType(String employeeType) {
-        this.employeeType = employeeType;
+    public void setEmployee_type(String employee_type) {
+        this.employee_type = employee_type;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getEmployee_first_name() {
+        return employee_first_name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setEmployee_first_name(String employee_first_name) {
+        this.employee_first_name = employee_first_name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getEmployee_last_name() {
+        return employee_last_name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setEmployee_last_name(String employee_last_name) {
+        this.employee_last_name = employee_last_name;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getEmployee_username() {
+        return employee_username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEmployee_username(String employee_username) {
+        this.employee_username = employee_username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmployee_password() {
+        return employee_password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmployee_password(String employee_password) {
+        this.employee_password = employee_password;
     }
 
 
@@ -88,12 +90,12 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + id +
-                ", employeeType='" + employeeType + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
+                "employee_id=" + employee_id +
+                ", employee_type='" + employee_type + '\'' +
+                ", employee_first_name='" + employee_first_name + '\'' +
+                ", employee_last_name='" + employee_last_name + '\'' +
+                ", employee_username='" + employee_username + '\'' +
+                ", employee_password='" + employee_password + '\'' +
                 '}';
     }
 }

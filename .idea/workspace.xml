@@ -5,12 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c71778ed-5b9f-40fa-b9b2-d562cc3c33c6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entity/AuthenticatedEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/AccountServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/EmployeeDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/EmployeeDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/TicketDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/TicketDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/TicketDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entity/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entity/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/TicketService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/DummyServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/EmployeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/EmployeeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/LoginServlet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/TicketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/TicketServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dao/ConnectionFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/EmployeeDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dao/EmployeeDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/TicketDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dao/TicketDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/TicketDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dao/TicketDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/entity/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/entity/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/entity/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/entity/Ticket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/TicketService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/TicketService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/servlets/DummyServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/servlets/EmployeeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/servlets/EmployeeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/servlets/TicketServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/servlets/TicketServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/AppTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +57,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
@@ -176,10 +195,10 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/project1$AppTest_testGetEmployeeById.ic" NAME="AppTest.testGetEmployeeById Coverage Results" MODIFIED="1651714781548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/project1$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1651715027254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/project1$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1651715027254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/project1$AppTest_testGetEmployeeById.ic" NAME="AppTest.testGetEmployeeById Coverage Results" MODIFIED="1651714781548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/project1$AppTest_testGetEmployee.ic" NAME="AppTest.testGetEmployee Coverage Results" MODIFIED="1651700060508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

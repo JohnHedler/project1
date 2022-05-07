@@ -35,7 +35,7 @@ public class AppTest {
         EmployeeDao employeeDao = DaoFactory.getEmployeeDao();
         employeeDao.insertEmployee(employee);
 
-        assertEquals(5, employee.getId());
+        assertEquals(5, employee.getEmployee_id());
     }
 
     //test to get employee's first name after retrieving record from database
@@ -45,7 +45,7 @@ public class AppTest {
         Employee employee = employeeDao.getEmployeeById(2);
         System.out.println(employee.toString());
 
-        assertEquals("Gregory", employee.getFirstName());
+        assertEquals("Gregory", employee.getEmployee_first_name());
     }
 
     //test to get employee's first name after retrieving record from database
@@ -54,7 +54,7 @@ public class AppTest {
         EmployeeDao employeeDao = DaoFactory.getEmployeeDao();
         Employee employee = employeeDao.getEmployeeByUserName("gharris");
 
-        assertEquals("employee", employee.getEmployeeType());
+        assertEquals("employee", employee.getEmployee_type());
     }
 
     //test to get employee's first name after retrieving record from database
@@ -72,11 +72,11 @@ public class AppTest {
         boolean isUpdated = false;
         EmployeeDao employeeDao = DaoFactory.getEmployeeDao();
         Employee employee = employeeDao.getEmployeeById(3);
-        employee.setEmployeeType("employee");
-        employee.setFirstName("Sandra");
-        employee.setLastName("Love");
-        employee.setUserName("slove");
-        employee.setPassword("9090*");
+        employee.setEmployee_type("employee");
+        employee.setEmployee_first_name("Sandra");
+        employee.setEmployee_last_name("Love");
+        employee.setEmployee_username("slove");
+        employee.setEmployee_password("9090*");
 
         isUpdated = employeeDao.updateEmployee(employee);
 
@@ -100,7 +100,7 @@ public class AppTest {
         TicketDao ticketDao = DaoFactory.getTicketDao();
         ticketDao.insertTicket(ticket);
 
-        assertEquals(10, ticket.getId());
+        assertEquals(10, ticket.getTicket_id());
     }
 
     //test to get ticket by id
@@ -110,8 +110,8 @@ public class AppTest {
         Ticket ticket = ticketDao.getTicketById(4);
         System.out.println(ticket.toString());
 
-        assertEquals(4, ticket.getId());
-        assertEquals(15.25, ticket.getAmount(), 100);
+        assertEquals(4, ticket.getTicket_id());
+        assertEquals(15.25, ticket.getTicket_amount(), 100);
     }
 
     //test to get all tickets by specific id
@@ -138,7 +138,7 @@ public class AppTest {
         TicketDao ticketDao = DaoFactory.getTicketDao();
         CustomArrayList<Ticket> tickets = ticketDao.getPendingTickets(1);
 
-        assertEquals("motel room", tickets.get(2).getDescription());
+        assertEquals("motel room", tickets.get(2).getTicket_description());
     }
 
     //test to get all approved/denied tickets
@@ -147,8 +147,8 @@ public class AppTest {
         TicketDao ticketDao = DaoFactory.getTicketDao();
         CustomArrayList<Ticket> tickets = ticketDao.getPastTickets(1);
 
-        assertEquals("approved", tickets.get(0).getStatus());
-        assertEquals("denied", tickets.get(1).getStatus());
+        assertEquals("approved", tickets.get(0).getTicket_status());
+        assertEquals("denied", tickets.get(1).getTicket_status());
     }
 
     //test to get tickets between dates
@@ -157,14 +157,14 @@ public class AppTest {
         TicketDao ticketDao = DaoFactory.getTicketDao();
         CustomArrayList<Ticket> tickets = ticketDao.getTicketsByDate(3, Timestamp.valueOf("2022-05-01 00:00:00"), Timestamp.valueOf("2022-05-05 00:00:00"));
         if (!tickets.isEmpty()) {
-            System.out.println(tickets.get(0).getDate());
+            System.out.println(tickets.get(0).getTicket_date());
         } else {
             System.out.println("Empty.");
         }
 
         Timestamp timestamp = Timestamp.valueOf("2022-05-04 00:00:00.00");
         String substringDate = String.valueOf(timestamp).substring(0, 10);
-        String substringResultDate = String.valueOf(tickets.get(0).getDate()).substring(0, 10);
+        String substringResultDate = String.valueOf(tickets.get(0).getTicket_date()).substring(0, 10);
 
         assertEquals(substringDate, substringResultDate);
     }
@@ -175,11 +175,11 @@ public class AppTest {
         boolean isUpdated = false;
         TicketDao ticketDao = DaoFactory.getTicketDao();
         Ticket ticket = ticketDao.getTicketById(1);
-        ticket.setEmployeeId(1);
-        ticket.setAmount(200);
-        ticket.setDescription("motel food");
-        ticket.setDate(null);
-        ticket.setStatus("approved");
+        ticket.setTicket_employee_id(1);
+        ticket.setTicket_amount(200);
+        ticket.setTicket_description("motel food");
+        ticket.setTicket_date(null);
+        ticket.setTicket_status("approved");
         isUpdated = ticketDao.updateTicket(ticket);
 
         assertTrue(isUpdated);
