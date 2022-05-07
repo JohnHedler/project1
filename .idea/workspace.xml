@@ -142,12 +142,12 @@
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="envOptions" />
       <option name="passParentEnvironmentVariables" value="true" />
-      <option name="port" value="8080" />
+      <option name="port" value="8088" />
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/8.5.78" />
           <option name="number" value="0" />
-          <option name="path" value="C:\Users\palad\OneDrive\Desktop\revature\plugins\apache-tomcat-8.5.78\apache-tomcat-8.5.78" />
+          <option name="path" value="C:\Users\chad1\Downloads\apache-tomcat-8.5.78\apache-tomcat-8.5.78" />
           <option name="version" value="8.5.78.0" />
         </TomcatInfo>
       </option>
