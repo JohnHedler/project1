@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c71778ed-5b9f-40fa-b9b2-d562cc3c33c6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/DummyServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/EmployeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/EmployeeServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/TicketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/TicketServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dbConfig.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/servlets/TicketServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/servlets/TicketServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/servlets/DummyServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/servlets/EmployeeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/servlets/EmployeeServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,12 +123,12 @@
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="envOptions" />
       <option name="passParentEnvironmentVariables" value="true" />
-      <option name="port" value="8080" />
+      <option name="port" value="8088" />
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/8.5.78" />
           <option name="number" value="0" />
-          <option name="path" value="C:\Users\palad\OneDrive\Desktop\revature\plugins\apache-tomcat-8.5.78\apache-tomcat-8.5.78" />
+          <option name="path" value="C:\Users\chad1\Downloads\apache-tomcat-8.5.78\apache-tomcat-8.5.78" />
           <option name="version" value="8.5.78.0" />
         </TomcatInfo>
       </option>

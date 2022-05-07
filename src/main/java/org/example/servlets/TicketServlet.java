@@ -27,13 +27,13 @@ public class TicketServlet extends HttpServlet {
             // try to parse the id from parameters. If it fails, that means we didn't pass one in:
             idToGet = Integer.parseInt(req.getParameter("ticket_employee_id"));
         } catch (NumberFormatException e) {
-            // if we didn't pass in an id, we want all books:
+            // if we didn't pass in an id, we want all tickets:
             CustomArrayList<Ticket> tickets = TicketService.getAllTickets();
             out.print(tickets);
             return;
         }
 
-        // if the catch block didn't trigger, that means we did pass in an id so we can use that to get a specific book:
+        // if the catch block didn't trigger, that means we did pass in an id
         Ticket ticket = TicketService.getTicketById(idToGet);
         out.print(ticket);
 
