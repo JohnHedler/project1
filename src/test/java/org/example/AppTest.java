@@ -128,15 +128,6 @@ public class AppTest {
         assertEquals(10, ticket.getTicket_id());
     }
 
-    //test to insert ticket
-    @Test
-    public void testInsertTicket2() {
-        Ticket ticket = new Ticket(3, 250, "food", null, "pending");
-        TicketService.insertTicket(ticket);
-
-        assertEquals(10, ticket.getTicket_id());
-    }
-
     //test to get ticket by id
     @Test
     public void testGetTicketById() {
