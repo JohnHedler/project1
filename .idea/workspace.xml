@@ -6,33 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c71778ed-5b9f-40fa-b9b2-d562cc3c33c6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/EmployeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/EmployeeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/EmployeeDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/EmployeeDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/TicketDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/TicketDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data_structure/CustomArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data_structure/CustomArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entity/AuthenticatedEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entity/AuthenticatedEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/AccountServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/EmployeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/EmployeeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/PingServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/PingServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/TicketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/TicketServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/ConnectionFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dao/ConnectionFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/EmployeeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dao/EmployeeDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/EmployeeDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dao/EmployeeDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/TicketDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dao/TicketDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/TicketDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/dao/TicketDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data_structure/CustomArrayList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data_structure/CustomArrayList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/entity/AuthenticatedEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/entity/AuthenticatedEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/entity/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/entity/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/entity/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/entity/Ticket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/EmployeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/service/TicketService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/service/TicketService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/servlets/AccountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/servlets/AccountServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/servlets/EmployeeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/servlets/EmployeeServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/servlets/PingServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/servlets/PingServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/servlets/TicketServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/servlets/TicketServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/AppTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +59,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Smart Tomcat.Project1">
+  <component name="RunManager" selected="JUnit.AppTest">
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
@@ -99,6 +75,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppTest.miscTestDependencyLoaderListener" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
+      <option name="METHOD_NAME" value="miscTestDependencyLoaderListener" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppTest.miscTestProduceErrors" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project1" />
       <extension name="coverage">
@@ -110,22 +102,6 @@
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
       <option name="METHOD_NAME" value="miscTestProduceErrors" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppTest.testMockAddNewAccountWrongValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="project1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.AppTest" />
-      <option name="METHOD_NAME" value="testMockAddNewAccountWrongValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -184,20 +160,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Smart Tomcat.Project1" />
       <item itemvalue="JUnit.AppTest" />
-      <item itemvalue="JUnit.AppTest.testMockAddNewAccountWrongValue" />
       <item itemvalue="JUnit.AppTest.testMockPostAccountSignInWithWrongCredentials" />
       <item itemvalue="JUnit.AppTest.testMockInsertEmployeeWithExistingName" />
       <item itemvalue="JUnit.AppTest.miscTestProduceErrors" />
+      <item itemvalue="JUnit.AppTest.miscTestDependencyLoaderListener" />
+      <item itemvalue="Smart Tomcat.Project1" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="JUnit.AppTest.miscTestDependencyLoaderListener" />
         <item itemvalue="JUnit.AppTest.miscTestProduceErrors" />
         <item itemvalue="JUnit.AppTest.testMockInsertEmployeeWithExistingName" />
         <item itemvalue="JUnit.AppTest.testMockPostAccountSignInWithWrongCredentials" />
-        <item itemvalue="JUnit.AppTest.testMockAddNewAccountWrongValue" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +200,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/project1$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1651965900235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/project1$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1652138028946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/project1$AppTest_testGetEmployeeById.ic" NAME="AppTest.testGetEmployeeById Coverage Results" MODIFIED="1651714781548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
