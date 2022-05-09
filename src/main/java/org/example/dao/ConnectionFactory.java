@@ -19,8 +19,8 @@ public class ConnectionFactory {
         // this method will return a connection the SQL
         public static Connection getConnection() {
             //with the boolean, we can turn testing on or off
-//            boolean test = true;
-            boolean test = false;
+            boolean test = true;
+//            boolean test = false;
 
             //determine the driver and config files
             String driver = test ? "org.h2.Driver" : "org.postgresql.Driver";

@@ -191,14 +191,15 @@ public class AppTest {
     //test to get tickets between dates and see if the dates match up
     @Test
     public void testGetTicketsByDate() {
-        CustomArrayList<Ticket> tickets = TicketService.getTicketsByDate(3, Timestamp.valueOf("2022-05-06 00:00:00"), Timestamp.valueOf("2022-05-07 00:00:00"));
+        CustomArrayList<Ticket> tickets = TicketService.getTicketsByDate(3, Timestamp.valueOf("2022-05-01 00:00:00"), Timestamp.valueOf("2022-05-31 00:00:00"));
         if (!tickets.isEmpty()) {
             System.out.println(tickets.get(0).getTicket_date());
         } else {
             System.out.println("Empty.");
         }
 
-        Timestamp timestamp = Timestamp.valueOf("2022-05-07 00:00:00.00");
+//        Timestamp timestamp = Timestamp.valueOf("2022-05-09 00:00:00.00");
+        Timestamp timestamp = Timestamp.valueOf(LocalDateTime.now());
         String substringDate = String.valueOf(timestamp).substring(0, 10);
         String substringResultDate = String.valueOf(tickets.get(0).getTicket_date()).substring(0, 10);
 
@@ -2213,6 +2214,8 @@ public class AppTest {
         ServletContext a = new TestServletContext();
         dependencyLoaderListener.contextInitialized(new ServletContextEvent(a));
         dependencyLoaderListener.contextDestroyed(new ServletContextEvent(a));
+
+        assertNotNull(dependencyLoaderListener);
     }
 
 }
