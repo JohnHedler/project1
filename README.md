@@ -7,7 +7,7 @@ Members: John, Chandresh
 TODO: Post specifics about the entire project and how to use it.
 
 Project specifications:
-1. User is able to create an account
+1. User is able to create an account as an employee or a manager
 2. User is able to login as a regular employee or a manager
 3. Employees are able to submit a ticket with price and discription of reimbursement being sought 
 4. Employees can view all tickets ordered by date
